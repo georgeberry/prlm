@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-Use `lm` in R adding while pseudo-observations to regularize every coefficient towards zero. `prlm` implements `lm` exactly except it adds an identity matrix to the `X` variables and a vector of `1`'s to the `y` variable.
+Use `lm` in R adding while pseudo-observations to regularize every coefficient towards zero. `prlm` implements `lm` exactly except it adds an identity matrix to the `X` variables and a vector of `0`'s to the `y` variable.
 
 See Bayesian Data Analysis Third Edition (Gelman et al.) Section 14.8 - "Including Numerical Prior Information" for method.
 
