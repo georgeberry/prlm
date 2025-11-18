@@ -14,7 +14,7 @@ The insight here is that you can add a single observation to regularize a coeffi
 
 ## Installation
 
-You can install the development version of prlm like so:
+You can install the `prlm` like so:
 
 ``` r
 devtools::install_github("georgeberry/prlm")
