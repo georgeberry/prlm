@@ -7,7 +7,7 @@
 #'
 #' \deqn{
 #'   \tilde{X} = \begin{bmatrix} X \\ I_p \end{bmatrix}, \quad
-#'   \tilde{y} = \begin{bmatrix} y \\ \mathbf{1}_p \end{bmatrix}
+#'   \tilde{y} = \begin{bmatrix} y \\ \mathbf{0}_p \end{bmatrix}
 #' }
 #'
 #' This is equivalent to adding one pseudo-observation for each coefficient,
@@ -101,7 +101,7 @@ prlm <- function (formula, data, subset, weights, na.action, method = "qr",
         # Identity matrix as pseudo-X
         X_pseudo <- diag(p)
 
-        # Vector of 1s as pseudo-y
+        # Vector of 0s as pseudo-y
         y_pseudo <- rep(0, p)
 
         # Combine augmented data
