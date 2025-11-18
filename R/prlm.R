@@ -102,7 +102,7 @@ prlm <- function (formula, data, subset, weights, na.action, method = "qr",
         X_pseudo <- diag(p)
 
         # Vector of 1s as pseudo-y
-        y_pseudo <- rep(1, p)
+        y_pseudo <- rep(0, p)
 
         # Combine augmented data
         x <- rbind(x, X_pseudo)
