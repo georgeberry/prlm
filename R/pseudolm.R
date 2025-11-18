@@ -1,6 +1,6 @@
 #' Linear Model With Identity-Matrix Pseudo-Observations
 #'
-#' `pseudolm()` behaves exactly like [stats::lm()] but augments the regression
+#' `prlm()` behaves exactly like [stats::lm()] but augments the regression
 #' system with \eqn{p} pseudo-observations, where \eqn{p} is the number of
 #' columns in the model matrix \eqn{X}. Specifically, the model is fit to an
 #' augmented system:
@@ -43,7 +43,7 @@
 #' @seealso [stats::lm()], [stats::lm.fit()]
 #'
 #' @export
-pseudolm <- function (formula, data, subset, weights, na.action, method = "qr", 
+prlm <- function (formula, data, subset, weights, na.action, method = "qr", 
     model = TRUE, x = FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE, 
     contrasts = NULL, offset, ...) 
 {

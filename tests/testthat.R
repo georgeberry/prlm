@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(pseudolm)
+library(prlm)
 
-test_check("pseudolm")
+test_check("prlm")
