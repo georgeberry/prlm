@@ -19,7 +19,7 @@ test_that("prlm matches manual augmented lm", {
 
   p <- ncol(X)
 
-  # identity rows & y=1
+  # identity rows & y=0
   X_aug <- rbind(X, diag(p))
   y_aug <- c(y, rep(0, p))
 

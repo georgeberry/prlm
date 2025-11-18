@@ -67,7 +67,7 @@ augmented system:
 \details{
 \deqn{
   \tilde{X} = \begin{bmatrix} X \\ I_p \end{bmatrix}, \quad
-  \tilde{y} = \begin{bmatrix} y \\ \mathbf{1}_p \end{bmatrix}
+  \tilde{y} = \begin{bmatrix} y \\ \mathbf{0}_p \end{bmatrix}
 }
 
 This is equivalent to adding one pseudo-observation for each coefficient,
