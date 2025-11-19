@@ -1,9 +1,11 @@
 #' Linear Model With Identity-Matrix Pseudo-Observations
 #'
 #' `prlm()` behaves exactly like [stats::lm()] but augments the regression
-#' system with \eqn{p} pseudo-observations, where \eqn{p} is the number of
-#' columns in the model matrix \eqn{X}. Specifically, the model is fit to an
-#' augmented system:
+#' system with \eqn{p} pseudo-observations to regularize the coefficients to
+#' roughly \eqn{\beta \sim \mathcal{N}(0, \sigma)} where \eqn{\sigma} is the
+#' standard error of the regression.
+#' 
+#' Specifically, the model is fit to an augmented system
 #'
 #' \deqn{
 #'   \tilde{X} = \begin{bmatrix} X \\ I_p \end{bmatrix}, \quad
@@ -144,18 +146,17 @@ prlm <- function (formula, data, subset, weights, na.action, method = "qr",
 #'
 #' `prlm1()` behaves like [stats::lm()] but augments the regression
 #' system with \eqn{p} pseudo-observations and scales these so that the prior
-#' on each coefficient is roughly \eqn{beta \sim \mathcal{N}(0, 1)}. It does
+#' on each coefficient is roughly \eqn{\beta \sim \mathcal{N}(0, 1)}. It does
 #' this by fitting [stats::lm()] on the data, getting the standard error of
 #' the regression \eqn{\sigma} and then scaling the pseudo-observation identity
 #' matrix.
 #' 
-#'
 #' This is equivalent to adding one pseudo-observation for each coefficient,
 #' using the identity matrix as the design rows and a vector of ones as the
 #' pseudo-response. The effect is a simple regularization that shrinks
 #' coefficients toward 0.
 #' 
-#' #' \deqn{
+#' \deqn{
 #'   \tilde{X} = \begin{bmatrix} X \\ I_p \end{bmatrix}, \quad
 #'   \tilde{y} = \begin{bmatrix} y \\ \mathbf{0}_p \end{bmatrix}
 #' }

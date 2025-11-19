@@ -60,11 +60,13 @@ observations.
 }
 \description{
 \code{prlm()} behaves exactly like \code{\link[stats:lm]{stats::lm()}} but augments the regression
-system with \eqn{p} pseudo-observations, where \eqn{p} is the number of
-columns in the model matrix \eqn{X}. Specifically, the model is fit to an
-augmented system:
+system with \eqn{p} pseudo-observations to regularize the coefficients to
+roughly \eqn{\beta \sim \mathcal{N}(0, \sigma)} where \eqn{\sigma} is the
+standard error of the regression.
 }
 \details{
+Specifically, the model is fit to an augmented system
+
 \deqn{
   \tilde{X} = \begin{bmatrix} X \\ I_p \end{bmatrix}, \quad
   \tilde{y} = \begin{bmatrix} y \\ \mathbf{0}_p \end{bmatrix}
