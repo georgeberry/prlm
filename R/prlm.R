@@ -96,10 +96,19 @@ prlm <- function (formula, data, subset, weights, na.action, method = "qr",
         x <- model.matrix(mt, mf, contrasts)
 
         ## --- BEGIN: pseudo obs ---
+        
+        # get sigma
+
+        fit <- lm.fit(x, y)
+        sigma2 <- sum(fit$residuals^2) / fit$df.residual
+        tau2 <- 1
+
+        lambda <- sigma2 / tau2
+
         p <- ncol(x)
 
         # Identity matrix as pseudo-X
-        X_pseudo <- diag(p)
+        X_pseudo <- sqrt(lambda) * diag(p)
 
         # Vector of 0s as pseudo-y
         y_pseudo <- rep(0, p)
